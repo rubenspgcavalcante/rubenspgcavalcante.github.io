@@ -5,12 +5,13 @@ module.exports = {
     devtool: 'source-map',
     entry: [
         'babel-polyfill',
+        'bootstrap-loader',
         './app/App.jsx'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/static/'
+        publicPath: '/dist/'
     },
     plugins: [
         new webpack.ProvidePlugin({
