@@ -1,2 +1,2 @@
-import AboutMe from "./components/AboutMe.jsx";
-module.exports = {AboutMe};
+import Home from "./components/Home.jsx";
+module.exports = {Home};

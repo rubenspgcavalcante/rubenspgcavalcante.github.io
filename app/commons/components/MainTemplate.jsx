@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 import {Navbar, Nav, NavItem} from "react-bootstrap";
+import is from "is_js";
 
 export default class MainTemplate extends Component {
     constructor(props) {
         super(props);
         const menus = [
+            {action: "/", label: "Home"},
             {action: "/about", label: "About Me"},
             {action: "/projects", label: "Projects"},
             {action: "/contact", label: "Contact"}
@@ -15,6 +17,14 @@ export default class MainTemplate extends Component {
     render() {
         const {menus} = this.state;
         const {pathname} = this.props.location;
+        let children;
+
+        if (is.not.null(this.props.children)) {
+            children = React.cloneElement(this.props.children, this.props);
+        }
+        else {
+            console.warn("<MainTemplate>: No children detected");
+        }
 
         return (
             <div>
@@ -31,9 +41,7 @@ export default class MainTemplate extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                <div className="content-view container">
-                    {React.cloneElement(this.props.children, this.props)}
-                </div>
+                {children}
                 <div className="footer">
                     <div className="pull-right">
                         <span className="text-muted hidden-xs">See me in </span>
