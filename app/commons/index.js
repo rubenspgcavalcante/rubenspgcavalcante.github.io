@@ -1,11 +1,8 @@
 import {bindActionCreators} from "redux";
 import { connect } from 'react-redux';
 
-import MainTemplate from "./components/MainTemplate.jsx";
-import ArticleEntry from "./components/ArticleEntry.jsx";
-import ActionFactory from "./factories/actions.factory";
-
-import store from "./store/store";
+import {MainTemplate, ArticleEntry} from './modules/ui/index';
+import {store, AppRouter, ActionFactory} from "./modules/core/index";
 
 //Map the used properties from state
 function mapStatesToProps(state) {
@@ -20,8 +17,9 @@ function mapDispatchToProps(dispatcher) {
 }
 
 const AppEnv = connect(mapStatesToProps, mapDispatchToProps)(MainTemplate);
+
 module.exports = {
-    AppEnv,
     ArticleEntry,
+    AppEnv,
     store
 };

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ArticleEntry} from '../../commons/index';
+import {ArticleEntry} from '../../commons/modules/ui/index';
 
 export default class Home extends Component {
     render() {
