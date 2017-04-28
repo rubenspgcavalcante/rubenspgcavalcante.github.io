@@ -1,2 +1,2 @@
-import AboutMe from "./components/AboutMe.jsx";
+import AboutMe from "./components/AboutMe";
 module.exports = {AboutMe};

@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {Navbar, Nav, NavItem} from "react-bootstrap";
-import is from "is_js";
 
 export default class MainTemplate extends Component {
     constructor(props) {
@@ -19,7 +18,7 @@ export default class MainTemplate extends Component {
         const {pathname} = this.props.location;
         let children;
 
-        if (is.not.null(this.props.children)) {
+        if (this.props.children) {
             children = React.cloneElement(this.props.children, this.props);
         }
         else {

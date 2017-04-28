@@ -1,2 +1,2 @@
-import Home from "./components/Home.jsx";
+import Home from './components/Home';
 module.exports = {Home};

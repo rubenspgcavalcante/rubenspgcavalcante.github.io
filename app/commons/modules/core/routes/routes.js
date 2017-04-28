@@ -1,7 +1,7 @@
-import {Home} from "home/index";
-import {AboutMe} from "about-me/index";
-import {Projects} from "projects/index";
-import {Contact} from "contact/index";
+import {Home} from "home";
+import {AboutMe} from "about-me";
+import {Projects} from "projects";
+import {Contact} from "contact";
 
 export default [
     {component: Home, index: true},
