@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 export default class MainTemplate extends Component {
   constructor(props) {
@@ -37,14 +37,11 @@ export default class MainTemplate extends Component {
           <Navbar.Collapse>
             <Nav bsStyle="pills" activeKey={pathname} >
               {menus.map((item, i) =>
-                <NavItem key={i} href={`#${item.action}`}>{item.label}</NavItem>
+                <NavItem key={i} href={`#${item.action}`} >{item.label}</NavItem>
               )}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <h1><Link to="/">Home</Link></h1>
-        <h1><Link to="/about">About me</Link></h1>
-        <h1><Link to="/projects">Projects</Link></h1>
         {children}
         <div className="footer" >
           <div className="pull-right" >
