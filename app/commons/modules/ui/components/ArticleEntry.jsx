@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {Parallax, Background} from "react-parallax";
-import ArticleBanner from "./ArticleBanner.jsx";
+import {Parallax, Background} from "react-parallax/src/jsx/index";
+import ArticleBanner from "./ArticleBanner";
 
 export default class ArticleEntry extends Component {
 

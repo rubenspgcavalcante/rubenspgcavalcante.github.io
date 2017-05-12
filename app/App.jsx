@@ -6,15 +6,16 @@ import "./styles/style.sass";
 
 import { AppEnv } from "./commons";
 import RouterFactory from "./commons/modules/core/factories/router.factory";
-import AppRouter from "./commons/modules/core/components/AppRouter.jsx";
+import AppRouter from "./commons/modules/core/components/App";
+
+import favicon from './assets/favicon.ico';
 
 const faviconElement = document.querySelector('link[rel="shortcut icon"]');
 faviconElement.href = favicon;
 
-const appRouter = (
+render(
   <AppRouter env={AppEnv} >
     {RouterFactory.buildRoutes()}
-  </AppRouter>
+  </AppRouter>,
+  document.getElementById('app')
 );
-
-render(appRouter, document.getElementById('root'));

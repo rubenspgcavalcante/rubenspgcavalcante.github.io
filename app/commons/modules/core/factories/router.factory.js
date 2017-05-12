@@ -1,4 +1,5 @@
-import {Route, IndexRoute} from "react-router";
+import React from 'react';
+import { IndexRoute, Route } from "react-router";
 import routes from "../routes/routes";
 
 export default class RouterFactory {
