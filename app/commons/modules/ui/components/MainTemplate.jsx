@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { Link } from "react-router";
 
 export default class MainTemplate extends Component {
   constructor(props) {

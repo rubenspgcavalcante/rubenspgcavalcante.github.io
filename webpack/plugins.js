@@ -1,4 +1,4 @@
-const { ProvidePlugin, EnvironmentPlugin } = require('webpack');
+const { ProvidePlugin, EnvironmentPlugin, optimize } = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -11,9 +11,13 @@ module.exports = [
     $: 'jquery',
     jquery: 'jquery'
   }),
-  new ExtractTextPlugin('styles.css'),
-  new OptimizeCssAssetsPlugin(),
   new EnvironmentPlugin(['NODE_ENV']),
+  new optimize.CommonsChunkPlugin({
+    name: "commons",
+    filename: "commons.js",
+    minChunks: 2
+  }),
+  new ExtractTextPlugin('styles.css'),
+  provideInProd(new OptimizeCssAssetsPlugin()),
   provideInProd(new UglifyJSPlugin({}))
-
 ].filter(plugin => !!plugin);
