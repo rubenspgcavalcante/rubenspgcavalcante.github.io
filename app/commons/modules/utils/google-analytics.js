@@ -1,5 +1,10 @@
-export default class GoogleAnalytics {
-  static install() {
+class GoogleAnalytics {
+  constructor() {
+    this._installed = false;
+    this._api = null;
+  }
+
+  install() {
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
       i[r] = i[r] || function () {
@@ -14,5 +19,19 @@ export default class GoogleAnalytics {
 
     ga('create', 'UA-99305630-1', 'auto');
     ga('send', 'pageview');
+    this._api = ga;
+  }
+
+  api(...args) {
+    if (this._installed) {
+      this._api(...args);
+    }
+  }
+
+  pageView(route) {
+    this.api('set', 'page', route);
+    this.api('send', 'pageview')
   }
 }
+
+export default new GoogleAnalytics();
