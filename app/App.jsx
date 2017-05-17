@@ -1,4 +1,4 @@
-import Raven from "raven";
+import Raven from "raven-js";
 import React from "react";
 import { render } from "react-dom";
 
