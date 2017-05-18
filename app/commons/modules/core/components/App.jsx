@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Route, Router } from "react-router";
 import { Provider } from "react-redux";
+import ReactGA from "react-ga";
+
 import store from "../store/store";
 import history from "../routes/history";
 
@@ -10,7 +12,7 @@ export default class App extends Component {
     const ConnectedTemplate = this.props.env;
     return (
       <Provider store={store} >
-        <Router history={history} >
+        <Router history={history} onUpdate={trackPage} >
           <Route path="/" component={this.props.env} >
             <ConnectedTemplate>
               {this.props.children}
@@ -20,4 +22,12 @@ export default class App extends Component {
       </Provider>
     )
   }
+}
+
+function trackPage() {
+  const { pathname, search } = window.location;
+  const page = pathname + search;
+
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
 }
