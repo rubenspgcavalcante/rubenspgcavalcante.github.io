@@ -5,16 +5,16 @@ class GoogleAnalytics {
   }
 
   install() {
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
+    (function (win, doc, tagType, apiSrc, exports, tagEl, query) {
+      win['GoogleAnalyticsObject'] = exports;
+      win[exports] = win[exports] || function () {
+          (win[exports].q = win[exports].q || []).push(arguments)
+        }, win[exports].l = 1 * new Date();
+      tagEl = doc.createElement(tagType),
+        query = doc.getElementsByTagName(tagType)[0];
+      tagEl.async = 1;
+      tagEl.src = apiSrc;
+      query.parentNode.insertBefore(tagEl, query)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-99305630-1', 'auto');
@@ -29,8 +29,7 @@ class GoogleAnalytics {
   }
 
   pageView(route) {
-    this.api('set', 'page', route);
-    this.api('send', 'pageview')
+    this.api('send', 'pageview', route)
   }
 }
 
