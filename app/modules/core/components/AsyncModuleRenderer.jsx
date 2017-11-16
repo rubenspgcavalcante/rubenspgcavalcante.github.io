@@ -19,15 +19,15 @@ export default class  extends PureComponent {
   }
 
   componentWillMount() {
-    const { module$, order, id, route, label } = this.props;
-    this.props.loading(true);
+    const { module$, order, id, route, label, loading, moduleLoaded } = this.props;
+
+    loading(true);
 
     module$.subscribe(pack => {
       const module = pack['default'];
 
-      this.props.loading(false);
-      this.props.moduleLoaded({ order, id, route, label, ...module });
-
+      loading(false);
+      moduleLoaded({ order, id, route, label, ...module });
       this.setState({ Component: module.Component });
     });
   }

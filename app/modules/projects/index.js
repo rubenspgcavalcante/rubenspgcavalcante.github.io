@@ -1,9 +1,9 @@
 import Component from './components/Projects';
-import picture from 'assets/banners/autumn/autumn.1920x400.png';
+import { BANNER_SUMMER } from "../ui/constants/banners";
 
 export default {
   Component,
-  picture,
+  picture: BANNER_SUMMER,
   title: "My Pojects",
   subtitle: "All I've done until now"
 }

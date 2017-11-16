@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import values from 'lodash/values';
 import sortBy from 'lodash/sortBy';
 
+import '../style/_nav.scss';
+
 const RouteLink = ({ label, route, active }) =>
   <li className='nav-item' ><Link className={`nav-link ${active ? 'active' : ''}`} to={route} >{label}</Link ></li >;
 
 export default ({ modules, location }) => (
-  <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
+  <nav className="navbar navbar-dark navbar-expand-md fixed-top bg-dark" >
     <a className="navbar-brand" href="#" >Navbar</a >
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" >

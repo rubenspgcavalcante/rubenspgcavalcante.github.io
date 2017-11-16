@@ -1,5 +1,4 @@
 const path = require('path');
-const {dev, prod} = require('./webpack/envs');
 const loaders = require('./webpack/loaders');
 const plugins = require('./webpack/plugins');
 
@@ -8,9 +7,9 @@ module.exports = {
   entry: ['./App.jsx'],
   output: {
     filename: '[name].js',
-    chunkFilename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: prod('/leaflet-ant-path/dist/') || dev('/dist/')
+    publicPath: '/dist/'
   },
   devtool: 'source-map',
   resolve: {

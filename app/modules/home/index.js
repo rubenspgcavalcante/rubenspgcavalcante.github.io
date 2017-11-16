@@ -1,9 +1,9 @@
 import Component from './components/Home';
-import picture from 'assets/banners/summer/summer.jpg';
+import { BANNER_SPRING } from "../ui/constants/banners";
 
 export default {
   Component,
-  picture,
+  picture: BANNER_SPRING,
   title: "All about me",
   subtitle: "Who am I?"
 }

@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import values from "lodash/values";
 import keyBy from "lodash/keyBy";
+import "bootstrap";
 
 import Routes from "./Routes";
 import store from "./store";

@@ -1,0 +1,42 @@
+.jumbotron {
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 400px;
+  width: 100%;
+  border-radius: 0;
+  top: -120px;
+
+  .banner {
+    left: -50%;
+    position: absolute;
+  }
+
+  .banner-change-enter {
+    opacity: 0.01;
+
+    &.banner-change-enter-active {
+      opacity: 1;
+      transition: opacity 1s ease-in;
+    }
+  }
+
+  .banner-change-leave {
+    opacity: 1;
+
+    &.banner-change-leave-active {
+      opacity: 0.01;
+      transition: opacity 1s ease-out;
+    }
+  }
+
+  .container {
+    position: absolute;
+    margin-top: 6rem;
+
+    h1, p {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
