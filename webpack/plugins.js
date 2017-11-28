@@ -21,7 +21,9 @@ module.exports = [
       return module.context && module.context.indexOf("node_modules") !== -1;
     }
   }),
-  new ExtractTextPlugin('styles.css'),
+  new ExtractTextPlugin({
+    filename: 'styles.css'
+  }),
   new DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify(CURRENT)
@@ -33,8 +35,10 @@ module.exports = [
   prod(new OptimizeCssAssetsPlugin()),
   prod(new UglifyJSPlugin({
     sourceMap: true,
-    compress: {
-      warnings: false
+    uglifyOptions: {
+      compress: {
+        warnings: false
+      }
     }
   }))
 ].filter(plugin => plugin !== null);

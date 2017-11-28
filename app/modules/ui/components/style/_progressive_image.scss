@@ -1,0 +1,16 @@
+.progressive-image {
+  position: relative;
+
+  img {
+    position: absolute;
+  }
+
+  .original {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.ready {
+      opacity: 1;
+    }
+  }
+}

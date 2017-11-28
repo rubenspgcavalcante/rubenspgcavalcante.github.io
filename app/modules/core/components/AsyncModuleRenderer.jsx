@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { number, object, string } from 'prop-types';
 
-export default class  extends PureComponent {
+export default class AsyncModuleRenderer extends PureComponent {
   static propTypes = {
     order: number.isRequired,
     id: string.isRequired,
