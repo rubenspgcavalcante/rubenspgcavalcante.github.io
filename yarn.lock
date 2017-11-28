@@ -2499,6 +2499,10 @@ iferr@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/iferr/-/iferr-0.1.5.tgz#c60eed69e6d8fdb6b3104a1fcbca1c192dc5b501"
 
+image-loader@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/image-loader/-/image-loader-0.0.1.tgz#980ed82e56a0f9de7f053e7268f4002389aa97ca"
+
 image-trace-loader@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/image-trace-loader/-/image-trace-loader-0.0.2.tgz#1e6075e96c70ddcf8dc9e31a33e44d61d25b220a"

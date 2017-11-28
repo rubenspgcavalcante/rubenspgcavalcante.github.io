@@ -1,0 +1,32 @@
+.banner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .show {
+    opacity: 1;
+    transition: opacity ease-in 4s;
+  }
+
+  .hide {
+    opacity: 0;
+    transition: opacity ease-out 4s;
+  }
+
+  &-container {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-thumbs {
+    position: absolute;
+    z-index: 1;
+
+    &, img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

@@ -33,6 +33,17 @@ module.exports = {
     },
     {
       test: /\.(gif|png|jpe?g)$/i,
+      include: /assets\/banners/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {}
+        }
+      ]
+    },
+    {
+      test: /\.(gif|png|jpe?g)$/i,
+      exclude: /node_modules|assets\/banners/,
       use: [
         {
           loader: 'image-trace-loader',
