@@ -41,6 +41,17 @@ module.exports = {
         }
       ]
     },
+    /*{
+      test: /\.thumb\.(gif|png|jpe?g)$/i,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 1000
+          }
+        }
+      ]
+    }, */
     {
       test: /\.(gif|png|jpe?g)$/i,
       exclude: /node_modules|assets\/banners/,

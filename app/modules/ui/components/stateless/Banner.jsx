@@ -27,24 +27,11 @@ export default class Banner extends PureComponent {
     const sourcesPromises = AVAILABLE_SIZES
       .map(([width, height]) => generateSource(PICTURE, width, height));
 
-    const buffers = Promise
+    Promise
       .all(sourcesPromises)
-      .then(sources => {
-        this.setState({ sources });
-
-        return Promise.all(
-          sources.map(({ src }) => new Promise(res => {
-            const img = new Image();
-            img.src = src;
-            img.onload = res;
-          }))
-        );
-      });
-
-    buffers.then(() => {
-      this.setState({ showHD: true });
-      setTimeout(() => this.setState({ startTransition: true }), 2000);
-    });
+      .then(sources =>
+        this.setState({ sources })
+      );
   }
 
   render() {
@@ -56,6 +43,16 @@ export default class Banner extends PureComponent {
 
     return (
       <div className="banner">
+        <picture className={`banner-thumbs ${startTransition ? 'hide' : ''}`}>
+          {sources.map(({ width, thumb }) =>
+            <source key={width} media={`(max-width: ${width}px)`} srcSet={thumb}/>)
+          }
+          <img src={sources[2].thumb} alt='banner'
+               onLoad={() => {
+                 this.setState({ showHD: true });
+                 setTimeout(() => this.setState({ startTransition: true }), 2000);
+               }}/>
+        </picture>
         {showHD ?
           <picture className={`banner-container ${startTransition ? 'show' : 'hide'}`}>
             {sources.map(({ width, src }) =>
@@ -64,12 +61,6 @@ export default class Banner extends PureComponent {
             <img src={sources[2].src} alt='banner'/>
           </picture> : null
         }
-        <picture className={`banner-thumbs ${startTransition ? 'hide' : ''}`}>
-          {sources.map(({ width, thumb }) =>
-            <source key={width} media={`(max-width: ${width}px)`} srcSet={thumb}/>)
-          }
-          <img src={sources[2].thumb} alt='banner'/>
-        </picture>
       </div>
     );
   }

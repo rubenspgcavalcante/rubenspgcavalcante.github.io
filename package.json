@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "thumbs": "webpack --config thumbs.webpack.config.js && node .tmp/generate-thumbs.js",
     "build": "NODE_ENV=production webpack --progress",
     "server": "NODE_ENV=development webpack-dev-server --hot --inline --compress --colors --history-api-fallback"
   },
