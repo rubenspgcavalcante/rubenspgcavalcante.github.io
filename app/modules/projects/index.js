@@ -5,5 +5,5 @@ export default {
   Component,
   picture: BANNER_SUMMER,
   title: "My Pojects",
-  subtitle: "All I've done until now"
+  subtitle: "A little about what I've done until now"
 }

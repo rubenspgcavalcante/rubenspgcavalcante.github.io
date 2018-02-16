@@ -20,7 +20,13 @@ export default class Banner extends PureComponent {
     PICTURE: string.isRequired
   };
 
-  state = { sources: [], showHD: false, startTransition: false };
+  state = { sources: [], showHD: false, startTransition: false, transitionId: null };
+
+  _onImageLoad() {
+    this.setState({ showHD: true });
+    const transitionId = setTimeout(() => this.setState({ startTransition: true }), 2000);
+    this.setState({ transitionId });
+  }
 
   componentWillMount() {
     const { PICTURE } = this.props;
@@ -32,6 +38,14 @@ export default class Banner extends PureComponent {
       .then(sources =>
         this.setState({ sources })
       );
+  }
+
+  componentWillUnmount() {
+    const { transitionId } = this.state;
+
+    if (transitionId) {
+      clearTimeout(transitionId);
+    }
   }
 
   render() {
@@ -47,10 +61,7 @@ export default class Banner extends PureComponent {
             <source key={width} media={`(max-width: ${width}px)`} srcSet={thumb}/>)
           }
           <img src={sources[2].thumb} alt='banner'
-               onLoad={() => {
-                 this.setState({ showHD: true });
-                 setTimeout(() => this.setState({ startTransition: true }), 2000);
-               }}/>
+               onLoad={this._onImageLoad.bind(this)}/>
         </picture>
         {showHD ?
           <picture className={`banner-container ${startTransition ? 'show' : ''}`}>
