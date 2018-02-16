@@ -7,4 +7,12 @@ $fa-font-path: "~font-awesome/fonts";
 
 body {
   padding-top: 3.5rem;
+
+  .jumbotron {
+    margin-bottom: -6rem;
+
+    .container {
+      bottom: 0;
+    }
+  }
 }

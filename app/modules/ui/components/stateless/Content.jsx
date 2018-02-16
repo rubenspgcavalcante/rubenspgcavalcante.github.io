@@ -1,11 +1,13 @@
 import React from 'react';
 
 export default ({ children }) => (
-  <div className="container" >
-    {children}
-    <hr />
-    <footer >
+  <div>
+    <div className="container">
+      {children}
+    </div>
+    <hr/>
+    <footer>
 
-    </footer >
-  </div >
+    </footer>
+  </div>
 );
