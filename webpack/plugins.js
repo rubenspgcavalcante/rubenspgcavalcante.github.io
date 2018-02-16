@@ -1,4 +1,4 @@
-const { ProvidePlugin, DefinePlugin, optimize } = require('webpack');
+const { DefinePlugin, optimize } = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -6,12 +6,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const { dev, test, prod, CURRENT } = require('./envs');
 
 module.exports = [
-  new ProvidePlugin({
-    Tether: 'tether',
-    Popper: 'popper.js',
-    jQuery: 'jquery-slim',
-    $: 'jquery-slim',
-  }),
   new optimize.CommonsChunkPlugin({
     name: 'vendor',
     minChunks: function (module) {

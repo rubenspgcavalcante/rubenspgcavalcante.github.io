@@ -14,7 +14,10 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", ".json"],
-    modules: [path.resolve(__dirname, 'app'), 'node_modules']
+    modules: [path.resolve(__dirname, 'app'), 'node_modules'],
+    alias:{
+      jquery: 'jquery-slim'
+    }
   },
   plugins,
   module: loaders

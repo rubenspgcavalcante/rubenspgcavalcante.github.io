@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Profile from "./Profile";
 
 export default class Home extends PureComponent {
   static propTypes = {};
@@ -6,7 +7,7 @@ export default class Home extends PureComponent {
   render() {
     return (
       <div>
-
+        <Profile/>
       </div>
     );
   }

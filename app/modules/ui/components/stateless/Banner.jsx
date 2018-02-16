@@ -40,10 +40,9 @@ export default class Banner extends PureComponent {
       return null
     }
 
-
     return (
       <div className="banner">
-        <picture className={`banner-thumbs ${startTransition ? 'hide' : ''}`}>
+        <picture className="banner-thumbs">
           {sources.map(({ width, thumb }) =>
             <source key={width} media={`(max-width: ${width}px)`} srcSet={thumb}/>)
           }
@@ -54,7 +53,7 @@ export default class Banner extends PureComponent {
                }}/>
         </picture>
         {showHD ?
-          <picture className={`banner-container ${startTransition ? 'show' : 'hide'}`}>
+          <picture className={`banner-container ${startTransition ? 'show' : ''}`}>
             {sources.map(({ width, src }) =>
               <source key={width} media={`(max-width: ${width}px)`} srcSet={src}/>)
             }

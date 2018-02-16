@@ -10,7 +10,7 @@ const RouteLink = ({ label, route, active }) =>
 
 export default ({ modules, location }) => (
   <nav className="navbar navbar-dark navbar-expand-md fixed-top bg-dark" >
-    <a className="navbar-brand" href="#" >Navbar</a >
+    <a className="navbar-brand" href="#" >Rubens Pinheiro</a >
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" >
       <span className="navbar-toggler-icon" />

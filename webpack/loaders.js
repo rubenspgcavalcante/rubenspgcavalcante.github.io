@@ -59,7 +59,7 @@ module.exports = {
         {
           loader: 'image-trace-loader',
           options: {
-            color: "#F6F8FA"
+            color: "#d2dde6"
           }
         },
         {
