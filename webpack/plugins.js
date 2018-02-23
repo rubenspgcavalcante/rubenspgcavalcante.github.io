@@ -1,4 +1,4 @@
-const { DefinePlugin, optimize } = require('webpack');
+const { DefinePlugin, ContextReplacementPlugin, optimize } = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -18,6 +18,10 @@ module.exports = [
   new ExtractTextPlugin({
     filename: 'styles.css'
   }),
+  new ContextReplacementPlugin(
+    /assets[\/]projects/,
+    /\.png/
+  ),
   new DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify(CURRENT)

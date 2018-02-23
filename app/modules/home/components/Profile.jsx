@@ -1,14 +1,6 @@
 import React from 'react';
-import myPic from "assets/profile/me.png";
-import ProgressiveImage from "../../ui/components/ProgressiveImage";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  width: 198px;
-  height: 100%;
-  float: left;
-  margin-right: 1rem;
-`;
+import { src, trace } from "assets/profile/me.png";
+import ProgressiveImage from "react-progressive-image";
 
 const medias = {
   'twitter': 'https://twitter.com/rubenspgc',
@@ -19,20 +11,22 @@ const medias = {
 };
 
 const Profile = (props) => (
-  <div className="card">
+  <div id="profile" className="card">
     <header className="card-header">
       <h4 className="text-center">I'm a Front end developer</h4>
     </header>
     <article className="card-body flex-md-wrap">
-      <div>
-        <Wrapper className="border border-dark rounded">
-          <ProgressiveImage source={myPic}/>
-        </Wrapper>
-        <p>
-          Passionate about new technologies, active open source contributor,
-          currently living and working in Berlin, Germany.
-        </p>
+      <div className="profile-pic">
+        <div className="border border-dark rounded">
+          <ProgressiveImage src={src} placeholder={trace}>
+            {(src) => <img src={src} alt='my picture'/>}
+          </ProgressiveImage>
+        </div>
       </div>
+      <p>
+        Passionate about new technologies, active open source contributor,
+        currently living and working in Berlin, Germany.
+      </p>
       <p>
         My focus is always build applications with a high quality code, with well
         defined design and architecture, being capable of escalate easily, don't loosing

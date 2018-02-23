@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { number, object, string } from 'prop-types';
+import store, { registerReducer } from "../../../store";
 
 export default class AsyncModuleRenderer extends PureComponent {
   static propTypes = {
@@ -28,7 +29,10 @@ export default class AsyncModuleRenderer extends PureComponent {
 
       loading(false);
       moduleLoaded({ order, id, route, label, ...module });
-      this.setState({ Component: module.Component });
+
+      const { Component, reducer } = module;
+      this.setState({ Component });
+      reducer && registerReducer(store, id, reducer);
     });
   }
 
@@ -36,9 +40,9 @@ export default class AsyncModuleRenderer extends PureComponent {
     const { Component } = this.state;
 
     return (
-      <div >
-        {Component ? <Component /> : null}
-      </div >
+      <div>
+        {Component ? <Component/> : null}
+      </div>
     );
   }
 };

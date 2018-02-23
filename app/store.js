@@ -1,17 +1,28 @@
-import { applyMiddleware, createStore } from "redux";
-import { combineEpics, createEpicMiddleware } from "redux-observable";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import modules from "./modules/core/reducers/modules";
+import loading from "./modules/core/reducers/loading";
 
-import reducer from './reducer';
+export default (() => {
+  const store = createStore(createReducer(),
+    composeWithDevTools(
+      applyMiddleware(thunk)
+    ));
+  store.async = {};
 
-const rootEpic = combineEpics(
-  
-);
+  return store;
+})();
 
+export function registerReducer(store, name, reducer) {
+  store.async[name] = reducer;
+  store.replaceReducer(createReducer(store.async));
+}
 
-export default createStore(
-  reducer,
-  composeWithDevTools(applyMiddleware(
-    createEpicMiddleware(rootEpic)
-  ))
-);
+function createReducer(reducers) {
+  return combineReducers({
+    modules,
+    loading,
+    ...reducers
+  });
+}

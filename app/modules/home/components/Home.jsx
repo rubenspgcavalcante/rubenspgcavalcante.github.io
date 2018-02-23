@@ -6,7 +6,7 @@ export default class Home extends PureComponent {
 
   render() {
     return (
-      <div className="col-lg-8 m-auto">
+      <div className="m-auto">
         <Profile/>
       </div>
     );

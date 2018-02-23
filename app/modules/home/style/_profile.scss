@@ -1,0 +1,18 @@
+#profile {
+  .profile-pic {
+    width: 12rem;
+    float: left;
+    margin-right: 1rem;
+
+    @include media-breakpoint-down(sm){
+      width: 70%;
+      margin: 0 auto 2rem auto;
+      display: block;
+      float: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

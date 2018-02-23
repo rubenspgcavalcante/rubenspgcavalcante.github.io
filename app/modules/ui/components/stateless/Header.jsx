@@ -26,11 +26,12 @@ export default class Header extends PureComponent {
 
     return (
       <div className="jumbotron">
-          <Banner PICTURE={picture} key={picture}/>
-        <div className="container">
-          <h1 className="display-3">{title}</h1>
-          <p>{subtitle}</p>
-        </div>
+        <Banner PICTURE={picture} key={picture}>
+          <div className="container col-lg-10 m-auto">
+            <h1 className="display-3">{title}</h1>
+            <p>{subtitle}</p>
+          </div>
+        </Banner>
       </div>
     );
   }

@@ -50,6 +50,7 @@ export default class Banner extends PureComponent {
 
   render() {
     const { sources, showHD, startTransition } = this.state;
+    const {children} = this.props;
     if (!sources.length) {
       return null
     }
@@ -71,6 +72,7 @@ export default class Banner extends PureComponent {
             <img src={sources[2].src} alt='banner'/>
           </picture> : null
         }
+        {children}
       </div>
     );
   }
