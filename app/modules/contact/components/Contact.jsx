@@ -7,7 +7,7 @@ export default () =>
       <p>
         Add me on <a target="_blank" rel="nofollow" href="https://www.linkedin.com/in/rubens-pinheiro-a34a4823/"><i
         className="fa fa-linkedin-square"/> LinkedIn</a> or
-        follow me on <a href="https://www.twiter.com/rubenspgc" rel="nofollow" target="_blank"> <i
+        follow me on <a href="https://www.twitter.com/rubenspgc" rel="nofollow" target="_blank"> <i
         className="fa fa-twitter"/> Twitter</a>, <a target="_blank" rel="nofollow"
                                                     href="https://medium.com/@rubenspgcavalcante"><i
         className="fa fa-medium"/> Medium</a> or <a target="_blank" rel="nofollow"
