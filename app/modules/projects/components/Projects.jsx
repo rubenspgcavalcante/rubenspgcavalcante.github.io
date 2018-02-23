@@ -13,7 +13,7 @@ export default class Projects extends PureComponent {
     if (!data) return null;
 
     return (
-      <div>
+      <div id="projects">
         {data.map((project, idx) => <ProjectCard key={idx} {...project} />)}
       </div>
     );

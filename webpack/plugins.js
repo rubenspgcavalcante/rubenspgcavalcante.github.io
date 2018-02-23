@@ -1,6 +1,7 @@
 const { DefinePlugin, ContextReplacementPlugin, optimize } = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const { dev, test, prod, CURRENT } = require('./envs');
@@ -30,6 +31,9 @@ module.exports = [
       path: '/'
     }
   }),
+  new CopyWebpackPlugin([
+    {from: "assets/favicon.ico", flatten: true}
+  ]),
   prod(new OptimizeCssAssetsPlugin()),
   prod(new UglifyJSPlugin({
     sourceMap: true,
