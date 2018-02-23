@@ -5,3 +5,5 @@ export const HOME = defineModule(0, 'home', 'Home', '/', () => import(/* webpack
 export const PROJECTS = defineModule(1, 'projects', 'Projects', '/projects', () => import(/* webpackChunkName: "projects" */ 'modules/projects/index'));
 
 export const PUBLICATIONS = defineModule(2, 'publications', 'Publications', '/publications', () => import(/* webpackChunkName: "publications" */ 'modules/publications/index'));
+
+export const CONTACT = defineModule(3, 'contact', 'Contact', '/contact', () => import(/* webpackChunkName: "publications" */ 'modules/contact/index'));

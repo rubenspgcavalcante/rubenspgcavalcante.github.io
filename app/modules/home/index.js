@@ -8,4 +8,3 @@ export default {
   title: "All about me",
   subtitle: <span>$>: whoami <span className="blink">_</span></span>
 }
-
