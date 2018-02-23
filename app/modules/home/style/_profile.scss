@@ -4,11 +4,15 @@
     float: left;
     margin-right: 1rem;
 
-    @include media-breakpoint-down(sm){
-      width: 70%;
+    @include media-breakpoint-down(md) {
+      width: 50%;
       margin: 0 auto 2rem auto;
       display: block;
       float: none;
+
+      @include media-breakpoint-down(sm) {
+        width: 70%;
+      }
     }
 
     img {

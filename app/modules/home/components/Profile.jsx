@@ -10,18 +10,16 @@ const medias = {
   'stack-overflow': 'https://stackoverflow.com/users/2346915/rubens-pinheiro'
 };
 
-const Profile = (props) => (
-  <div id="profile" className="card">
+export default () =>
+  <div id="profile" className="card ">
     <header className="card-header">
       <h4 className="text-center">I'm a Front end developer</h4>
     </header>
     <article className="card-body flex-md-wrap">
       <div className="profile-pic">
-        <div className="border border-dark rounded">
-          <ProgressiveImage src={src} placeholder={trace}>
-            {(src) => <img src={src} alt='my picture'/>}
-          </ProgressiveImage>
-        </div>
+        <ProgressiveImage src={src} placeholder={trace}>
+          {(src) => <img className="rounded" src={src} alt='my picture'/>}
+        </ProgressiveImage>
       </div>
       <p>
         Passionate about new technologies, active open source contributor,
@@ -39,8 +37,4 @@ const Profile = (props) => (
           <a href={medias[key]} key={key} className="ml-2"><i className={`fa fa-${key}`}/></a>
         )}</span>
     </footer>
-  </div>
-);
-
-Profile.propTypes = {};
-export default Profile;
+  </div>;
