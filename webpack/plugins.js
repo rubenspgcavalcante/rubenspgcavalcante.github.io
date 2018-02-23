@@ -20,7 +20,7 @@ module.exports = [
     filename: 'styles.css'
   }),
   new ContextReplacementPlugin(
-    /assets[\/]projects/,
+    /assets[\/](projects|publications)/,
     /\.png/
   ),
   new DefinePlugin({
@@ -32,7 +32,7 @@ module.exports = [
     }
   }),
   new CopyWebpackPlugin([
-    {from: "assets/favicon.ico", flatten: true}
+    { from: "assets/favicon.ico", flatten: true }
   ]),
   prod(new OptimizeCssAssetsPlugin()),
   prod(new UglifyJSPlugin({
