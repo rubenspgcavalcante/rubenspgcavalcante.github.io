@@ -26,8 +26,8 @@ export default () =>
         currently living and working in Berlin, Germany.
       </p>
       <p>
-        My focus is always build applications with a high quality code, with well
-        defined design and architecture, being capable of escalate easily, don't loosing
+        My focus is always to build applications with high quality code, with well
+        defined design and architecture, being capable of scale easily, don't loosing
         the practicality of creating new features in a fast way.
       </p>
     </article>

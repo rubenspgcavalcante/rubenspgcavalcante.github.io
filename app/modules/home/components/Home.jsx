@@ -14,7 +14,7 @@ export default class Home extends PureComponent {
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
-              <p>I'm fascinated by the <b>JavaScript</b> and <b>NodeJS</b> world and everything that surrounds.
+              <p>I'm fascinated by the <b>JavaScript</b> and <b>NodeJS</b> world and everything that surrounds it.
                 Although this is my current focus, I have good experience in other languages
                 I've worked in past too, like <b>Python</b>, <b>PHP</b> and <b>C++</b>.</p>
               <p>
