@@ -20,7 +20,7 @@ module.exports = [
     filename: 'styles.css'
   }),
   new ContextReplacementPlugin(
-    /assets[\/](projects|publications)/,
+    /assets[\/](projects|publications|banners)/,
     /\.png/
   ),
   new DefinePlugin({

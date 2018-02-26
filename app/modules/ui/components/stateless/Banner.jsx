@@ -1,19 +1,17 @@
 import React, { PureComponent } from 'react';
 import { string } from 'prop-types';
+import classNames from "classnames";
 import { AVAILABLE_SIZES } from "../../constants/banners";
 import "../style/_banner.scss";
 
-const context = require.context("assets/banners", true, /\.png/);
+const resolver = path => import(`assets/banners/${path}`);
 
 const generateSource = (path, width, height) => new Promise(res => {
   const fileName = thumb => `${path}.${width}x${height}${thumb ? '.thumb' : ''}.png`;
 
-  const src = context(fileName());
-  const thumb = context(fileName(true));
-
-  res({ width, height, src, thumb });
+  Promise.all([resolver(fileName()), resolver(fileName(true))])
+    .then(([src, thumb]) => res({ width, height, src, thumb }));
 });
-
 
 export default class Banner extends PureComponent {
   static propTypes = {
@@ -26,6 +24,25 @@ export default class Banner extends PureComponent {
     this.setState({ showHD: true });
     const transitionId = setTimeout(() => this.setState({ startTransition: true }), 2000);
     this.setState({ transitionId });
+  }
+
+  _buildPicturesBlock(sources, isThumb = false, transition = false) {
+    const fallBackSrc = isThumb
+      ? sources[2].thumb
+      : sources[2].src;
+
+    const classes = classNames({ "banner-thumbs": isThumb, "banner-container": !isThumb, show: transition });
+
+    return (
+      <picture className={classes}>
+        {sources.map(({ width, src, thumb }, idx) =>
+          <source key={idx} media={`(${idx === sources.length - 1 ? 'min' : 'max'}-width: ${width}px)`}
+                  srcSet={isThumb ? thumb : src}/>)
+        }
+        <img src={fallBackSrc} alt='banner'
+             onLoad={() => isThumb && this._onImageLoad()}/>
+      </picture>
+    )
   }
 
   componentWillMount() {
@@ -50,27 +67,16 @@ export default class Banner extends PureComponent {
 
   render() {
     const { sources, showHD, startTransition } = this.state;
-    const {children} = this.props;
+    const { children } = this.props;
     if (!sources.length) {
       return null
     }
 
     return (
       <div className="banner">
-        <picture className="banner-thumbs">
-          {sources.map(({ width, thumb }) =>
-            <source key={width} media={`(max-width: ${width}px)`} srcSet={thumb}/>)
-          }
-          <img src={sources[2].thumb} alt='banner'
-               onLoad={this._onImageLoad.bind(this)}/>
-        </picture>
+        {this._buildPicturesBlock(sources, true, false)}
         {showHD ?
-          <picture className={`banner-container ${startTransition ? 'show' : ''}`}>
-            {sources.map(({ width, src }) =>
-              <source key={width} media={`(max-width: ${width}px)`} srcSet={src}/>)
-            }
-            <img src={sources[2].src} alt='banner'/>
-          </picture> : null
+          this._buildPicturesBlock(sources, false, startTransition) : null
         }
         {children}
       </div>
