@@ -1,6 +1,6 @@
 import React from "react";
 import AsyncComponent from "../../core/components/AsyncComponent";
-
+import ProgressiveImageLoader from "../../ui/components/ProgressiveImageLoader";
 
 export default ({ id, title, link }) =>
   <div className="publication">
@@ -11,7 +11,7 @@ export default ({ id, title, link }) =>
       <div className="card-body">
         <a rel="nofollow" href={link} target="_blank">
           <AsyncComponent promise={import(`assets/publications/${id}.png`)}>
-            {({ src }) => <img src={src} alt={id}/>}
+            {(img) => <ProgressiveImageLoader image={img} alt={id}/>}
           </AsyncComponent>
         </a>
       </div>

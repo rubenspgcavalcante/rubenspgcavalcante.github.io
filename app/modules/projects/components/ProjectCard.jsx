@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import AsyncComponent from "../../core/components/AsyncComponent";
+import AsyncComponent from "modules/core/components/AsyncComponent";
+import ProgressiveImageLoader from "modules/ui/components/ProgressiveImageLoader";
 
 const Card = styled.div`
   width: 280px;
@@ -12,7 +13,7 @@ export default ({ title, project_name, page, picture, description }) =>
   <Card className="card">
     <a rel="nofollow" href={page || repoUrl(project_name)} target="_blank">
       <AsyncComponent promise={import(`assets/projects/${project_name}.png`)}>{(path) =>
-        <img className="card-img-top" src={path.src} alt={project_name}/>
+        <ProgressiveImageLoader className="card-img-top" image={path} alt={project_name}/>
       }
       </AsyncComponent>
     </a>

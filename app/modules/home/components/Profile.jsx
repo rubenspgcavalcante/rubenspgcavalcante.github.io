@@ -1,6 +1,6 @@
 import React from 'react';
-import { src, trace } from "assets/profile/me.png";
-import ProgressiveImage from "react-progressive-image";
+import * as meImg from "assets/profile/me.png";
+import ProgressiveImageLoader from "modules/ui/components/ProgressiveImageLoader";
 
 const medias = {
   'twitter': 'https://twitter.com/rubenspgc',
@@ -17,9 +17,7 @@ export default () =>
     </header>
     <article className="card-body flex-md-wrap">
       <div className="profile-pic">
-        <ProgressiveImage src={src} placeholder={trace}>
-          {(src) => <img className="rounded" src={src} alt='my picture'/>}
-        </ProgressiveImage>
+        <ProgressiveImageLoader image={meImg} alt={"my picture"}/>
       </div>
       <p>
         Passionate about new technologies, active open source contributor,

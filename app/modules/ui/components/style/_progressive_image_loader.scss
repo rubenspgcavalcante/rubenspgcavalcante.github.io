@@ -1,0 +1,28 @@
+.progressive-image-loader {
+  $timeout: 200ms;
+
+  .wrapper {
+    position: relative;
+
+    .picture {
+      opacity: 0;
+      transition: opacity $timeout ease-in;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &.ready {
+        opacity: 1;
+      }
+    }
+
+    .thumb {
+      transition: opacity $timeout ease-out;
+      opacity: 1;
+
+      &.fade {
+        opacity: 0;
+      }
+    }
+  }
+}
