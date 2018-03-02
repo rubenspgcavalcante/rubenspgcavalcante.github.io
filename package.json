@@ -10,6 +10,7 @@
   "scripts": {
     "thumbs": "webpack --config thumbs.webpack.config.js && node .tmp/generate-thumbs.js",
     "build": "rm -rf dist/ && NODE_ENV=production webpack --progress",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "server": "NODE_ENV=development webpack-dev-server --hot --inline --compress --colors --history-api-fallback",
     "analyse": "NODE_ENV=production webpack --profile --json > .tmp/stats.json && webpack-bundle-analyzer .tmp/stats.json"
   },
