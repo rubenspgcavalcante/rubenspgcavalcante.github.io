@@ -4,7 +4,11 @@ import classNames from "classnames";
 import { AVAILABLE_SIZES } from "../../constants/banners";
 import "../style/_banner.scss";
 
-const resolver = path => import(`assets/banners/${path}`);
+const resolver = path => import(
+  /* webpackChunkName: "banner-" */
+  /* webpackMode: "eager" */
+  `assets/banners/${path}`
+  );
 
 const generateSource = (path, width, height) => new Promise(res => {
   const fileName = thumb => `${path}.${width}x${height}${thumb ? '.thumb' : ''}.png`;

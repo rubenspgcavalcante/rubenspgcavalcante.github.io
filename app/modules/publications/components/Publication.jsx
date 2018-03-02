@@ -10,7 +10,11 @@ export default ({ id, title, link }) =>
       </div>
       <div className="card-body">
         <a rel="nofollow" href={link} target="_blank">
-          <AsyncComponent promise={import(`assets/publications/${id}.png`)}>
+          <AsyncComponent promise={import(
+            /* webpackChunkName: "publication-" */
+            /* webpackMode: "eager" */
+            `assets/publications/${id}.png`
+            )}>
             {(img) => <ProgressiveImageLoader image={img} alt={id}/>}
           </AsyncComponent>
         </a>

@@ -1,12 +1,19 @@
 const { DefinePlugin, ContextReplacementPlugin, optimize } = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const HTMLPlugin = require('html-webpack-plugin');
 
 const { dev, test, prod, CURRENT } = require('./envs');
 
+const assetsContext = /assets[\/](projects|publications|banners)/;
+
 module.exports = [
+  new HTMLPlugin({
+    template: 'assets/index.html',
+    favicon: 'assets/favicon.ico'
+  }),
   new optimize.CommonsChunkPlugin({
     name: 'vendor',
     minChunks: function (module) {
@@ -16,11 +23,18 @@ module.exports = [
       return module.context && module.context.indexOf("node_modules") !== -1;
     }
   }),
+  new optimize.CommonsChunkPlugin({
+    name: 'images',
+    async: true,
+    minChunks: ({ resource, context }) => {
+      return context && assetsContext.test(context)
+    }
+  }),
   new ExtractTextPlugin({
-    filename: 'styles.css'
+    filename: 'build/style.[contenthash].css'
   }),
   new ContextReplacementPlugin(
-    /assets[\/](projects|publications|banners)/,
+    assetsContext,
     /\.png/
   ),
   new DefinePlugin({
@@ -32,7 +46,8 @@ module.exports = [
     }
   }),
   new CopyWebpackPlugin([
-    { from: "assets/favicon.ico", flatten: true }
+    { from: "assets/404.html", flatten: true },
+    { from: "assets/_config.yml", flatten: true }
   ]),
   prod(new OptimizeCssAssetsPlugin()),
   prod(new UglifyJSPlugin({

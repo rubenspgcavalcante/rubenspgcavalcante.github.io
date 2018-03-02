@@ -37,21 +37,12 @@ module.exports = {
       use: [
         {
           loader: 'file-loader',
-          options: {}
-        }
-      ]
-    },
-    /*{
-      test: /\.thumb\.(gif|png|jpe?g)$/i,
-      use: [
-        {
-          loader: 'url-loader',
           options: {
-            limit: 1000
+            name: 'assets/[hash].[ext]'
           }
         }
       ]
-    }, */
+    },
     {
       test: /\.(gif|png|jpe?g)$/i,
       exclude: /node_modules|assets\/banners/,
@@ -65,7 +56,8 @@ module.exports = {
         {
           loader: 'url-loader',
           options: {
-            limit: 8192
+            limit: 8192,
+            name: 'assets/[hash].[ext]'
           }
         }
       ]
@@ -81,7 +73,8 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            mimetype: 'application/font-woff'
+            mimetype: 'application/font-woff',
+            name: 'fonts/[hash].[ext]'
           }
         }
       ]
@@ -89,7 +82,12 @@ module.exports = {
     {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       use: [
-        { loader: 'file-loader' }
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[hash].[ext]'
+          }
+        }
       ]
     }
   ]

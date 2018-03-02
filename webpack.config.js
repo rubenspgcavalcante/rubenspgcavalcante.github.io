@@ -6,10 +6,10 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: ['./App.jsx'],
   output: {
-    filename: '[name].js',
-    chunkFilename: '[name].chunk.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/'
+    filename: 'build/[name].[hash].js',
+    chunkFilename: 'build/[name].[hash].chunk.js',
+    path: path.resolve(__dirname, 'dist/'),
+    publicPath: '/'
   },
   devtool: 'source-map',
   resolve: {
