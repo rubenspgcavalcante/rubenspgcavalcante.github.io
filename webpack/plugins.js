@@ -33,7 +33,7 @@ module.exports = [
   }),
   new ContextReplacementPlugin(
     assetsContext,
-    /\.png/
+    /\.(png|webp)/
   ),
   new DefinePlugin({
     'process.env': {

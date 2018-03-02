@@ -11,10 +11,14 @@ const resolver = path => import(
   );
 
 const generateSource = (path, width, height) => new Promise(res => {
-  const fileName = thumb => `${path}.${width}x${height}${thumb ? '.thumb' : ''}.png`;
+  const resolve = ext => resolver(`${path}.${width}x${height}${ext}`);
 
-  Promise.all([resolver(fileName()), resolver(fileName(true))])
-    .then(([src, thumb]) => res({ width, height, src, thumb }));
+  Promise.all(
+    ['.png', '.thumb.png', '.webp', '.thumb.webp'].map(resolve)
+  ).then(
+    ([srcPng, thumbPng, srcWebp, thumbWebp]) =>
+      res({ width, height, srcPng, thumbPng, srcWebp, thumbWebp })
+  );
 });
 
 export default class Banner extends PureComponent {
@@ -30,6 +34,16 @@ export default class Banner extends PureComponent {
     this.setState({ transitionId });
   }
 
+  _buildSourceBlock(sources, isThumb = false, type = 'png') {
+    return sources.map(({ width, srcPng, thumbPng, srcWebp, thumbWebp }, idx) => {
+      const src = type === 'png' ? srcPng : srcWebp;
+      const thumb = type === 'png' ? thumbPng : thumbWebp;
+
+      return <source key={idx} media={`(${idx === sources.length - 1 ? 'min' : 'max'}-width: ${width}px)`}
+                     srcSet={isThumb ? thumb : src} type={`image/${type}`}/>
+    })
+  }
+
   _buildPicturesBlock(sources, isThumb = false, transition = false) {
     const fallBackSrc = isThumb
       ? sources[2].thumb
@@ -39,10 +53,8 @@ export default class Banner extends PureComponent {
 
     return (
       <picture className={classes}>
-        {sources.map(({ width, src, thumb }, idx) =>
-          <source key={idx} media={`(${idx === sources.length - 1 ? 'min' : 'max'}-width: ${width}px)`}
-                  srcSet={isThumb ? thumb : src}/>)
-        }
+        {this._buildSourceBlock(sources, isThumb, 'webp')}
+        {this._buildSourceBlock(sources, isThumb, 'png')}
         <img src={fallBackSrc} alt='banner'
              onLoad={() => isThumb && this._onImageLoad()}/>
       </picture>

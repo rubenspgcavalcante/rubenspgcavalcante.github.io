@@ -32,7 +32,7 @@ module.exports = {
       })
     },
     {
-      test: /\.(gif|png|jpe?g)$/i,
+      test: /\.(gif|png|jpe?g|webp)$/i,
       include: /assets\/banners/,
       use: [
         {
