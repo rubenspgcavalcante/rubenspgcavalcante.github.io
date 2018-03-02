@@ -6,16 +6,16 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: ['./App.jsx'],
   output: {
-    filename: 'build/[name].[hash].js',
-    chunkFilename: 'build/[name].[hash].chunk.js',
-    path: path.resolve(__dirname, 'dist/'),
+    filename: 'dist/[name].[hash].js',
+    chunkFilename: 'dist/[name].[hash].chunk.js',
+    path: path.resolve(__dirname),
     publicPath: '/'
   },
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", ".json"],
     modules: [path.resolve(__dirname, 'app'), 'node_modules'],
-    alias:{
+    alias: {
       jquery: 'jquery-slim'
     }
   },

@@ -38,7 +38,7 @@ module.exports = {
         {
           loader: 'file-loader',
           options: {
-            name: 'assets/[hash].[ext]'
+            name: 'dist/assets/[hash].[ext]'
           }
         }
       ]
@@ -57,7 +57,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8192,
-            name: 'assets/[hash].[ext]'
+            name: 'dist/assets/[hash].[ext]'
           }
         }
       ]
@@ -74,7 +74,7 @@ module.exports = {
           options: {
             limit: 10000,
             mimetype: 'application/font-woff',
-            name: 'fonts/[hash].[ext]'
+            name: 'dist/fonts/[hash].[ext]'
           }
         }
       ]
@@ -85,7 +85,7 @@ module.exports = {
         {
           loader: 'file-loader',
           options: {
-            name: 'fonts/[hash].[ext]'
+            name: 'dist/fonts/[hash].[ext]'
           }
         }
       ]
