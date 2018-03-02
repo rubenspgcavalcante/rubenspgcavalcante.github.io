@@ -10,8 +10,7 @@ const assetsContext = /assets[\/](projects|publications|banners)/;
 
 module.exports = [
   new HTMLPlugin({
-    template: 'assets/index.template.html',
-    favicon: 'assets/favicon.ico'
+    template: 'assets/index.template.html'
   }),
   new optimize.CommonsChunkPlugin({
     name: 'vendor',
