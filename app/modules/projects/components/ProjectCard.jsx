@@ -1,14 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import Thumb from "./Thumb";
 import { getRepoUrl } from "../../core/utils/github";
 
-const Card = styled.div`
-  width: 282px;
-`;
-
 export default ({ title, project_name, page, picture, description }) =>
-  <Card className="card">
+  <div className="card">
     <Thumb projectName={project_name} url={page || getRepoUrl(project_name)}/>
     <div className="card-body">
       <h5 className="card-title">{title}</h5>
@@ -27,4 +22,4 @@ export default ({ title, project_name, page, picture, description }) =>
           Check on Github <i className="fa fa-github"/></a>
       </div>
     </div>
-  </Card>
+  </div>
