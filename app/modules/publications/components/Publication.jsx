@@ -1,6 +1,17 @@
 import React from "react";
 import AsyncComponent from "../../core/components/AsyncComponent";
 import ProgressiveImageLoader from "../../ui/components/ProgressiveImageLoader";
+import { importWithTrace } from "../../core/utils/image";
+
+const pubImporter = (pubName, ext) =>
+  import(
+    /* webpackChunkName: "publication-" */
+    /* webpackMode: "eager" */
+    `assets/publications/${pubName}.${ext}`
+    );
+
+const pubPromise = pubName =>
+  importWithTrace(pubImporter(pubName, 'png'), pubImporter(pubName, 'webp'));
 
 export default ({ id, title, link }) =>
   <div className="publication">
@@ -10,11 +21,7 @@ export default ({ id, title, link }) =>
       </div>
       <div className="card-body">
         <a rel="nofollow" href={link} target="_blank">
-          <AsyncComponent promise={import(
-            /* webpackChunkName: "publication-" */
-            /* webpackMode: "eager" */
-            `assets/publications/${id}.png`
-            )}>
+          <AsyncComponent promise={pubPromise(id)}>
             {(img) => <ProgressiveImageLoader image={img} alt={id}/>}
           </AsyncComponent>
         </a>

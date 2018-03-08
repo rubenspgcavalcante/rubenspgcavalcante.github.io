@@ -1,6 +1,6 @@
 import React from 'react';
-import * as meImg from "assets/profile/me.png";
-import ProgressiveImageLoader from "modules/ui/components/ProgressiveImageLoader";
+import ProgressiveWebp from "modules/ui/components/ProgressiveWebp";
+import { importWithTrace } from "../../core/utils/image";
 
 const medias = {
   'twitter': 'https://twitter.com/rubenspgc',
@@ -17,7 +17,9 @@ export default () =>
     </header>
     <article className="card-body flex-md-wrap">
       <div className="profile-pic">
-        <ProgressiveImageLoader image={meImg} alt={"my picture"}/>
+        <ProgressiveWebp alt={"my picture"} importer={
+          importWithTrace(import("assets/profile/me.png"), import("assets/profile/me.webp"))
+        }/>
       </div>
       <p>
         Passionate about new technologies, active open source contributor,

@@ -32,7 +32,18 @@ module.exports = {
       })
     },
     {
-      test: /\.(gif|png|jpe?g|webp)$/i,
+      test: /\.webp$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'dist/assets/[hash].[ext]'
+          }
+        }
+      ]
+    },
+    {
+      test: /\.(gif|png|jpe?g)$/i,
       include: /assets\/banners/,
       use: [
         {
