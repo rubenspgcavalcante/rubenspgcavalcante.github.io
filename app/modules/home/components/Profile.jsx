@@ -2,6 +2,11 @@ import React from 'react';
 import ProgressiveWebp from "modules/ui/components/ProgressiveWebp";
 import { importWithTrace } from "../../core/utils/image";
 
+const myPicImporter = importWithTrace(
+  import(/* webpackMode: "eager" */ "assets/profile/me.png"),
+  import(/* webpackMode: "eager" */ "assets/profile/me.webp")
+);
+
 const medias = {
   'twitter': 'https://twitter.com/rubenspgc',
   'github': 'https://github.com/rubenspgcavalcante/',
@@ -17,9 +22,7 @@ export default () =>
     </header>
     <article className="card-body flex-md-wrap">
       <div className="profile-pic">
-        <ProgressiveWebp alt={"my picture"} importer={
-          importWithTrace(import("assets/profile/me.png"), import("assets/profile/me.webp"))
-        }/>
+        <ProgressiveWebp alt={"my picture"} importer={myPicImporter}/>
       </div>
       <p>
         Passionate about new technologies, active open source contributor,
