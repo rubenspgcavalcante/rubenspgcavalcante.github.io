@@ -4,7 +4,7 @@ const plugins = require('./webpack/plugins');
 
 module.exports = {
   context: path.resolve(__dirname, 'app'),
-  entry: ['./App.jsx'],
+  entry: ['intersection-observer', './App.jsx'],
   output: {
     filename: 'dist/[name].[hash].js',
     chunkFilename: 'dist/[name].[hash].chunk.js',

@@ -4,7 +4,7 @@ import Thumb from "./Thumb";
 import { getRepoUrl } from "../../core/utils/github";
 
 const Card = styled.div`
-  width: 280px;
+  width: 282px;
 `;
 
 export default ({ title, project_name, page, picture, description }) =>

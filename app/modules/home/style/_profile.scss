@@ -1,4 +1,15 @@
 #profile {
+  @include media-breakpoint-up(md) {
+    .card-body {
+      padding: 0;
+
+      p {
+        padding: 1rem 0.5rem 0;
+        margin: 0;
+      }
+    }
+  }
+
   .profile-pic {
     width: 12rem;
     float: left;

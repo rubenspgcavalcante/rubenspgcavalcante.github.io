@@ -20,6 +20,7 @@
     "bootstrap": "4.0.0",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
+    "intersection-observer": "^0.5.0",
     "jquery-slim": "^3.0.0",
     "lodash": "^4.17.4",
     "popper.js": "^1.12.9",
