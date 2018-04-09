@@ -1,5 +1,10 @@
 [
   {
+    "id": "progressive-image-loading-and-intersectionobserver",
+    "title": "Progressive Image Loading and IntersectionObserver",
+    "link": "https://medium.com/front-end-hacking/progressive-image-loading-and-intersectionobserver-d0359b5d90cd"
+  },
+  {
     "id": "implementing-javascript-functors-and-monads",
     "title": "Implementing JavaScript Functors and Monads",
     "link": "https://medium.com/front-end-hacking/implementing-javascript-functors-and-monads-a87b6a4b4d9a"
