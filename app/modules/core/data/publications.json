@@ -1,5 +1,10 @@
 [
   {
+    "id": "custom-builds-with-webpack",
+    "title": "Custom builds with Webpack: Manipulating Contexts",
+    "link": "https://medium.com/front-end-hacking/custom-builds-with-webpack-e15f0f0fdd34"
+  },
+  {
     "id": "webpack-and-dynamic-imports-doing-it-right",
     "title": "Webpack and Dynamic Imports: Doing it Right",
     "link": "https://medium.com/front-end-hacking/webpack-and-dynamic-imports-doing-it-right-72549ff49234"
