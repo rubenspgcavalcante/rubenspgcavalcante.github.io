@@ -16,8 +16,8 @@ const thumbPromise = pName =>
 export default ({ projectName, url }) =>
   <a rel="nofollow" href={url} target="_blank">
     <AsyncComponent
-      promise={thumbPromise(projectName)}>{(path) =>
-      <ProgressiveImageLoader className="card-img-top" image={path} alt={projectName}/>
+      promise={thumbPromise(projectName)}>{img =>
+      <ProgressiveImageLoader className="card-img-top" image={img} alt={projectName}/>
     }
     </AsyncComponent>
   </a>

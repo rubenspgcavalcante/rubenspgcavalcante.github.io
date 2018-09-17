@@ -21,7 +21,7 @@ export default class AsyncModuleRenderer extends PureComponent {
 
   componentWillMount() {
     const { module$, order, id, route, label, loading, moduleLoaded } = this.props;
-
+    
     loading(true);
 
     module$.subscribe(pack => {

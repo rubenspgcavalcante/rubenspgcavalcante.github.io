@@ -15,7 +15,9 @@ const generateSource = (path, width, height) => new Promise(res => {
 
   Promise.all(
     ['.png', '.thumb.png', '.webp', '.thumb.webp'].map(resolve)
-  ).then(
+  )
+  .then(sources => sources.map(src => src.default))
+  .then(
     ([srcPng, thumbPng, srcWebp, thumbWebp]) =>
       res({ width, height, srcPng, thumbPng, srcWebp, thumbWebp })
   );

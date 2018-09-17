@@ -1,7 +1,6 @@
-const { DefinePlugin, ContextReplacementPlugin, optimize } = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { DefinePlugin, ContextReplacementPlugin } = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 
 const { dev, test, prod, CURRENT } = require('./envs');
@@ -12,24 +11,9 @@ module.exports = [
   new HTMLPlugin({
     template: 'assets/index.template.html'
   }),
-  new optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: function (module) {
-      if (module.resource && (/^.*\.(css|scss)$/).test(module.resource)) {
-        return false;
-      }
-      return module.context && module.context.indexOf("node_modules") !== -1;
-    }
-  }),
-  new optimize.CommonsChunkPlugin({
-    name: 'images',
-    async: true,
-    minChunks: ({ resource, context }) => {
-      return context && assetsContext.test(context)
-    }
-  }),
-  new ExtractTextPlugin({
-    filename: 'dist/style.[contenthash].css'
+  new MiniCssExtractPlugin({
+    filename: "dist/[name].[hash].css",
+    chunkFilename: "dist/[name].[hash].css"
   }),
   new ContextReplacementPlugin(
     assetsContext,
@@ -43,13 +27,5 @@ module.exports = [
       path: '/'
     }
   }),
-  prod(new OptimizeCssAssetsPlugin()),
-  prod(new UglifyJSPlugin({
-    sourceMap: true,
-    uglifyOptions: {
-      compress: {
-        warnings: false
-      }
-    }
-  }))
+  prod(new OptimizeCssAssetsPlugin())
 ].filter(plugin => plugin !== null);

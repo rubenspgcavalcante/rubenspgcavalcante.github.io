@@ -1,8 +1,10 @@
 const path = require('path');
 const loaders = require('./webpack/loaders');
 const plugins = require('./webpack/plugins');
+const { dev, prod } = require('./webpack/envs');
 
 module.exports = {
+  mode: dev("development") || prod("production"),
   context: path.resolve(__dirname, 'app'),
   entry: ['intersection-observer', './App.jsx'],
   output: {
@@ -20,5 +22,18 @@ module.exports = {
     }
   },
   plugins,
-  module: loaders
+  module: loaders,
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        images: {
+          test: /\.png|\.webp/,
+        }
+      }
+    }
+  }
 };

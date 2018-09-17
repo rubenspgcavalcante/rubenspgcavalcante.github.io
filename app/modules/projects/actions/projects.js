@@ -7,6 +7,6 @@ export const loadProjects = () => dispatch => {
     /* webpackMode: "eager" */
     'modules/core/data/projects.json'
     )
-    .then(payload => dispatch({ type: LOAD_PROJECTS_SUCCESS, payload }))
+    .then(projects => dispatch({ type: LOAD_PROJECTS_SUCCESS, payload: projects.default }))
     .catch(payload => dispatch({ type: LOAD_PROJECTS_ERROR, payload }))
 };

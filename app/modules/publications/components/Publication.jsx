@@ -22,7 +22,7 @@ export default ({ id, title, link }) =>
       <div className="card-body">
         <a rel="nofollow" href={link} target="_blank">
           <AsyncComponent promise={pubPromise(id)}>
-            {(img) => <ProgressiveImageLoader image={img} alt={id}/>}
+            {img => <ProgressiveImageLoader image={img} alt={id}/>}
           </AsyncComponent>
         </a>
       </div>

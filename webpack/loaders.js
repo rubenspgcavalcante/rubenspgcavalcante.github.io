@@ -1,6 +1,5 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
-const { dev, test, prod } = require('./envs');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { dev } = require('./envs');
 
 module.exports = {
   rules: [
@@ -18,18 +17,12 @@ module.exports = {
       }
     },
     {
-      test: /\.scss|sass$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: ["css-loader", "sass-loader"]
-      })
-    },
-    {
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: ["css-loader"]
-      })
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        dev(true) ? 'style-loader' : MiniCssExtractPlugin.loader,
+        'css-loader',
+        'sass-loader',
+      ],
     },
     {
       test: /\.webp$/i,
