@@ -1,4 +1,4 @@
-import { MODULE_LOADED, MODULES_PRE_LOADED } from "../actions/index";
+import { MODULE_LOADED, MODULES_PRE_LOADED } from '../actions/index';
 
 export default (state = {}, { type, payload }) => {
   switch (type) {

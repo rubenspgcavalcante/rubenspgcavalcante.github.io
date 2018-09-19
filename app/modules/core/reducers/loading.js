@@ -1,4 +1,4 @@
-import { LOADING } from "../actions/index";
+import { LOADING } from '../actions/index';
 
 export default (state = 0, { type, payload }) => {
   switch (type) {

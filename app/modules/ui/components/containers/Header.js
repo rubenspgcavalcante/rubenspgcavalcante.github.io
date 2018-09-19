@@ -6,4 +6,6 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ modules }) => ({ modules });
 
-export default connect(mapStateToProps)(withRouter((props) => <Header {...props} />));
+export default connect(mapStateToProps)(
+  withRouter(props => <Header {...props} />)
+);

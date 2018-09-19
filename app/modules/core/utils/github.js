@@ -1,1 +1,2 @@
-export const getRepoUrl = projectName => `https://github.com/rubenspgcavalcante/${projectName}`;
+export const getRepoUrl = projectName =>
+  `https://github.com/rubenspgcavalcante/${projectName}`;

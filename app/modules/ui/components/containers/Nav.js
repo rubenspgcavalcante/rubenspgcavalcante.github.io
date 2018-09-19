@@ -6,4 +6,6 @@ import Nav from '../stateless/Nav';
 
 const mapStateToProps = ({ modules }) => ({ modules });
 
-export default connect(mapStateToProps)(withRouter(props => <Nav {...props}/>));
+export default connect(mapStateToProps)(
+  withRouter(props => <Nav {...props} />)
+);
