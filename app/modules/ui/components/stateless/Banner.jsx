@@ -40,8 +40,9 @@ export default class Banner extends PureComponent {
     return sources.map(({ width, srcPng, thumbPng, srcWebp, thumbWebp }, idx) => {
       const src = type === 'png' ? srcPng : srcWebp;
       const thumb = type === 'png' ? thumbPng : thumbWebp;
+      const lastBanner = idx === sources.length - 1;
 
-      return <source key={idx} media={`(${idx === sources.length - 1 ? 'min' : 'max'}-width: ${width}px)`}
+      return <source key={idx} media={lastBanner ? null : `max-width: ${width}px)`}
                      srcSet={isThumb ? thumb : src} type={`image/${type}`}/>
     })
   }

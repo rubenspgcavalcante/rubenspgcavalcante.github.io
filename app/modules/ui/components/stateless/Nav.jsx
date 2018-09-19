@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from "jquery";
 import values from 'lodash/values';
 import sortBy from 'lodash/sortBy';
+import "bootstrap/js/dist/collapse";
 
 import '../style/_nav.scss';
 

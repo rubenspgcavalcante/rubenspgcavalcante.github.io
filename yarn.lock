@@ -6707,10 +6707,6 @@ rx@*:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs-compat@^6.3.2:
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.3.2.tgz#2386ade05e693480fdf96f56042a629aef6c5ea5"
-
 rxjs@^6.1.0, rxjs@^6.3.2:
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.3.2.tgz#6a688b16c4e6e980e62ea805ec30648e1c60907f"
@@ -8252,3 +8248,7 @@ yauzl@^2.2.1:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.0.1"
+
+zepto@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/zepto/-/zepto-1.2.0.tgz#e127bd9e66fd846be5eab48c1394882f7c0e4f98"

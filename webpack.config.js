@@ -1,9 +1,10 @@
 const path = require('path');
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const loaders = require('./webpack/loaders');
 const plugins = require('./webpack/plugins');
 const { dev, prod } = require('./webpack/envs');
 
-module.exports = {
+module.exports = (env={}) => ({
   mode: dev("development") || prod("production"),
   context: path.resolve(__dirname, 'app'),
   entry: ['intersection-observer', './App.jsx'],
@@ -21,7 +22,9 @@ module.exports = {
       jquery: 'jquery-slim'
     }
   },
-  plugins,
+  plugins: env.analyse
+  ? [new BundleAnalyzerPlugin(), ...plugins]
+  : plugins,
   module: loaders,
   optimization: {
     splitChunks: {
@@ -36,4 +39,4 @@ module.exports = {
       }
     }
   }
-};
+});
