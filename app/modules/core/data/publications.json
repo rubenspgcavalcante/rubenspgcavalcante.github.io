@@ -1,5 +1,10 @@
 [
   {
+    "id": "the-power-of-redux-and-react-lazy",
+    "title": "The Power of Redux and React.lazy: Reusing UI and the Data Layer",
+    "link": "https://medium.com/front-end-hacking/the-power-of-redux-and-react-lazy-bdeb21028f43"
+  },
+  {
     "id": "custom-builds-with-webpack",
     "title": "Custom builds with Webpack: Manipulating Contexts",
     "link": "https://medium.com/front-end-hacking/custom-builds-with-webpack-e15f0f0fdd34"
