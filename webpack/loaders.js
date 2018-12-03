@@ -68,7 +68,12 @@ module.exports = {
     },
     {
       test: /\.ico$/,
-      use: { loader: 'file-loader' }
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: 'dist/assets/[hash].[ext]'
+        }
+      }
     },
     {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

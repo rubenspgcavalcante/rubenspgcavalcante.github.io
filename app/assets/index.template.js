@@ -1,9 +1,17 @@
+import previewSrc from './meta/site-preview.png';
+import favicon from './meta/favicon.ico';
+
+export default `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:image" content="${previewSrc.src}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="196">
+    <meta property="og:image:height" content="196">
+    <link rel="icon" type="image/x-icon" href="${favicon}">
     <title>Rubens Pinheiro</title>
     <script type="application/javascript">
       (function (i, s, o, g, r, a, m) {
@@ -30,3 +38,4 @@
     Please enable JavaScript to access this site :)
 </noscript>
 </html>
+`;
