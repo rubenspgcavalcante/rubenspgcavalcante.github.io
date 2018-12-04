@@ -47,7 +47,7 @@ export default class ProgressiveImageLoader extends PureComponent {
               if (!loading) setTimeout(() => this.setState({ transition: true }), timeout);
               return (
                 <div className={classNames("progressive-image-loader", className)}>
-                  <TransitionBlock transitionReady={transition} show={!loading} src={src} alt={alt}/>
+                  <TransitionBlock transitionReady={transition} show={!loading} src={src} trace={image.trace} alt={alt}/>
                 </div>
               )
             }}
