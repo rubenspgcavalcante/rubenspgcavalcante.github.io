@@ -1,5 +1,11 @@
-import previewSrc from './meta/site-preview.png';
-import favicon from './meta/favicon.ico';
+import meta from './meta';
+const {
+  url,
+  title,
+  description,
+  favicon,
+  preview: { src, type, width, height }
+} = meta;
 
 export default `
 <!DOCTYPE html>
@@ -7,10 +13,14 @@ export default `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:image" content="${previewSrc.src}">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="196">
-    <meta property="og:image:height" content="196">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="${url}" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${description}" />
+    <meta property="og:image" content="${src}">
+    <meta property="og:image:type" content="${type}">
+    <meta property="og:image:width" content="${width}">
+    <meta property="og:image:height" content="${height}">
     <link rel="icon" type="image/x-icon" href="${favicon}">
     <title>Rubens Pinheiro</title>
     <script type="application/javascript">
