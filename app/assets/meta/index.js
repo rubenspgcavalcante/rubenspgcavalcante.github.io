@@ -5,8 +5,8 @@ import { title, description } from './site-data';
 const url = "https://rubenspgcavalcante.github.io";
 const preview = {
   src,
-  width: 1080,
-  height: 567,
+  width: 1200,
+  height: 627,
   type: 'image/png'
 };
 
