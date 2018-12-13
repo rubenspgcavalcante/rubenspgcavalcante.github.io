@@ -22,6 +22,7 @@ export default `
     <meta property="og:image:type" content="${type}">
     <meta property="og:image:width" content="${width}">
     <meta property="og:image:height" content="${height}">
+    <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/x-icon" href="${favicon}">
     <title>Rubens Pinheiro</title>
     <script type="application/javascript">
