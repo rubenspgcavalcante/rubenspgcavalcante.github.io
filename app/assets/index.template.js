@@ -16,7 +16,7 @@ export default `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Rubens Pinheiro Gonçalves Cavalcante">
-    <meta name="Description" content="${description}">
+    <meta name="description" content="${description}">
     <meta name="theme-color" content="${themeColor}">
     <meta property="og:type" content="${siteType}">
     <meta property="og:url" content="${url}" />
