@@ -7,7 +7,9 @@ const preview = {
   src,
   width: 1200,
   height: 627,
-  type: 'image/png'
+  type: 'image/png',
+  siteType: "website",
+  themeColor: "#666666"
 };
 
 export default { url, title, description, favicon, preview };

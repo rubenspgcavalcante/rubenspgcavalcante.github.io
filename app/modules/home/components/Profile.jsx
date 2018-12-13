@@ -38,11 +38,12 @@ export default () => (
           className="mr-2"
           target="_blank"
           rel="noopener"
+          title="Github commits"
           href="https://sourcerer.io/rubenspgcavalcante"
         >
           <img
             src="https://img.shields.io/badge/JavaScript-459%20commits-orange.svg"
-            alt=""
+            alt="Github JS commits number"
           />
         </a>
       </span>
@@ -51,7 +52,7 @@ export default () => (
       <span>
         Follow me
         {Object.keys(medias).map(key => (
-          <a href={medias[key]} key={key} className="ml-2">
+          <a title={key} href={medias[key]} key={key} className="ml-2">
             <i className={`fa fa-${key}`} />
           </a>
         ))}
