@@ -13,6 +13,7 @@ export default `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Rubens Pinheiro Gonçalves Cavalcante">
     <meta property="og:type" content="website">
     <meta property="og:url" content="${url}" />
     <meta property="og:title" content="${title}" />
