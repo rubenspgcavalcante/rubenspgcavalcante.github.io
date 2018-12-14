@@ -20,6 +20,17 @@ if ('serviceWorker' in navigator) {
   runtime.register();
 }
 
+window.addEventListener('beforeinstallprompt', e =>
+  e.userChoice(outcome =>
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'PWA',
+      eventAction: 'install',
+      eventLabel: outcome
+    })
+  )
+);
+
 store.dispatch(modulesPreLoaded(keyBy(values(modules), 'id')));
 
 render(
