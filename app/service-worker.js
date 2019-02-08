@@ -1,6 +1,8 @@
 const { assets, version } = global.serviceWorkerOption;
 
-const assetsToCache = [...assets, './'].map(path => {
+const assetsToCache = [...assets, './']
+.filter(name => !/\.(png|jp(e)?g|webp)$/.test(name))
+.map(path => {
   return new URL(path, global.location).toString();
 });
 
