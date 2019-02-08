@@ -32,10 +32,10 @@ export default () => (
         My focus is always to build applications with high quality code, with
         well defined design and architecture, being capable of scale easily,
         don't loosing the practicality of creating new features in a fast way.
-        For instance, you can check that this site is a <b>PWA</b> (Progressive
-        Web App), and with focus not on web peformance (using optmized images
-        like webp) but also on acessibility for readers and SEO. I push you to
-        check how it peformes on lighthouse!
+        For instance, you can check that my site is a PWA (Progressive Web App),
+        and with focus not only in web performance (using optimized images like
+        webp) but also on accessibility for readers and SEO. I push you to check
+        how it performs on lighthouse!
       </p>
       <span>
         <a

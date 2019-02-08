@@ -9,8 +9,8 @@ module.exports = (env={}) => ({
   context: path.resolve(__dirname, 'app'),
   entry: ['intersection-observer', './App.jsx'],
   output: {
-    filename: 'dist/[name].[hash].js',
-    chunkFilename: 'dist/[name].[hash].chunk.js',
+    filename: 'dist/[name].[contenthash].js',
+    chunkFilename: 'dist/[name].[contenthash].chunk.js',
     path: path.resolve(__dirname),
     publicPath: '/'
   },
