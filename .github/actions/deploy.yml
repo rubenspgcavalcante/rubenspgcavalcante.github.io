@@ -1,0 +1,10 @@
+name: "deploy"
+description: "Deploy Gatsby build to gh-pages branch"
+outputs:
+  start:
+    description: "The deployment process start message"
+  success:
+    description: "The success messsage"
+runs:
+  using: "node12"
+  main: "deploy.js"

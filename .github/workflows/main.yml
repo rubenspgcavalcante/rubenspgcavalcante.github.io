@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and test
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: yarn build
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deployment to gh-pages
+    steps:
+      - name: Deployment step
+        id: deploy
+        uses: .github/actions
+      - name: Get the output
+        run: echo "${{ steps.deployment.outputs.success }}"
