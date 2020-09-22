@@ -11,7 +11,7 @@ export const PageBlockContent = styled.div`
   padding: 0 4rem;
 
   ${mq.desktop} {
-    width: 50%;
+    width: 70%;
     margin: auto;
   }
 `;

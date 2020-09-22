@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Typist from "react-typist";
+import { animated, useTransition } from "react-spring";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
+
 import { PageBlock, PageBlockContent } from "../../commons/style/Page";
 import mq from "../../commons/style/MediaQueries";
 
@@ -23,8 +27,27 @@ const Centered = styled.div`
   padding-top: 30%;
 `;
 
+const Icon = styled(FontAwesomeIcon)`
+  color: #009dff;
+  display: block;
+  position: absolute;
+  bottom: 2%;
+  font-size: 64px;
+  left: calc(50% - 32px);
+
+  ${mq.desktop} {
+    font-size: 96px;
+    left: calc(50% - 48px);
+  }
+`;
+
 export default function Intro() {
   const [done, setDone] = useState(false);
+  const transitions = useTransition(done, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
 
   return (
     <Block>
@@ -39,6 +62,14 @@ export default function Intro() {
             </Typist>
           </Title>
         </Centered>
+        {transitions.map(
+          ({ item, key, props }) =>
+            item && (
+              <animated.div key={key} style={props}>
+                <Icon icon={faArrowCircleDown} />
+              </animated.div>
+            )
+        )}
       </PageBlockContent>
     </Block>
   );
