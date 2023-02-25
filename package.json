@@ -1,72 +1,22 @@
 {
-  "name": "rubenspgcavalcante-site",
-  "private": true,
-  "description": "Rubens P. G. Cavalcante personal site",
+  "name": "rubenspgcavalcante.github.io",
   "version": "0.1.0",
-  "license": "0BSD",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "emotion-reset": "^2.0.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0",
-    "react-intersection-observer": "^8.28.5",
-    "react-spring": "^8.0.27",
-    "react-typist": "^2.0.5"
-  },
-  "devDependencies": {
-    "@actions/core": "^1.2.5",
-    "@actions/github": "^4.0.0",
-    "@babel/core": "^7.11.6",
-    "@storybook/addon-actions": "^6.0.21",
-    "@storybook/addon-essentials": "^6.0.21",
-    "@storybook/addon-links": "^6.0.21",
-    "@storybook/react": "^6.0.21",
-    "babel-loader": "^8.1.0",
-    "chalk": "^4.1.0",
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.24.55",
-    "gatsby-plugin-emotion": "^4.3.10",
-    "gatsby-plugin-fontawesome-css": "^1.0.0",
-    "gatsby-plugin-manifest": "^2.4.30",
-    "gatsby-plugin-react-helmet": "^3.3.11",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gh-pages": "^3.1.0",
-    "husky": "^4.3.0",
-    "isomorphic-fetch": "^2.2.1",
-    "lint-staged": "^10.4.0",
-    "prettier": "2.1.0",
-    "react-is": "^16.13.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rubenspgcavalcante/rubenspgcavalcante.github.io"
-  },
-  "bugs": {
-    "url": "https://github.com/rubenspgcavalcante/rubenspgcavalcante.github.io/issues"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js?(x)": "yarn format"
+    "@types/node": "18.14.1",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.2.1",
+    "next": "13.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5"
   }
 }
