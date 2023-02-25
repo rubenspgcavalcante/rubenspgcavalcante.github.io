@@ -7,7 +7,7 @@ const github = require("@actions/github");
 (async () => {
   core.setOutput("start", chalk.blue("📦 Deployment process in progress..."));
   try {
-    await publish("public");
+    await publish("out");
     core.setOutput(
       "success",
       chalk.green("🚀 Successfully deployed to gh-pages")
