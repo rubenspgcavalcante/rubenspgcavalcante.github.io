@@ -25,7 +25,7 @@ const sample = [
     createdAt: 1575966111512,
     title: "Webpack: Reusing Module in Multiple Entries",
     description:
-      "Have you ever struggled with Webpack splitChunks? It’s not breaking and reusing repetitive modules? Check the solution!",
+      "Have you ever struggled with Webpack splitChunks? It's not breaking and reusing repetitive modules? Check the solution!",
     imageUrl: "https://miro.medium.com/max/1200/1*cUjHJMBc9qb-1KMiSwRnWQ.jpeg",
   },
 ];
