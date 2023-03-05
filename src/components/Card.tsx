@@ -3,10 +3,10 @@ import React from "react";
 import { up } from "styled-breakpoints";
 
 type Props = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
-const Container = styled.main`
+const CardContainer = styled.section`
   max-width: 1024px;
   margin: auto;
   background-color: #fff;
@@ -18,6 +18,6 @@ const Container = styled.main`
   }
 `;
 
-export default function RootContainer({ children }: Props) {
-  return <Container>{children}</Container>;
+export default function Card({ children }: Props) {
+  return <CardContainer>{children}</CardContainer>;
 }

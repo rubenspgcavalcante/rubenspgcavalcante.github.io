@@ -7,11 +7,11 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Layout = styled.div`
+const Layout = styled.main`
   height: 100%;
 
   ${up("md")} {
-    padding-top: 2rem;
+    padding: 2rem 1rem;
     height: auto;
   }
 `;

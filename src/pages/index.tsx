@@ -1,14 +1,13 @@
-import CardContent from "@/profile/CardContent";
-import CardHeader from "@/profile/CardHeader";
-import ProfilePhoto from "@/profile/ProfilePhoto";
+import CardsSpacer from "@/components/CardsSpacer";
+import HomeCard from "./HomeCard";
+import PublicationsCard from "./PublicationsCard";
 
-export default function Home() {
+export default function Index() {
   return (
     <>
-      <CardHeader>
-        <ProfilePhoto />
-      </CardHeader>
-      <CardContent />
+      <HomeCard />
+      <CardsSpacer />
+      <PublicationsCard />
     </>
   );
 }

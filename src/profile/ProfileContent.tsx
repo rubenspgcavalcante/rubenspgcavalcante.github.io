@@ -2,54 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 import { up } from "styled-breakpoints";
 import Link from "next/link";
+import CardTitle from "@/components/CardTitle";
+import TextContent from "@/components/TextContent";
+import CardBody from "@/components/CardBody";
 
 type CardContentProps = {};
-
-const AboutSection = styled.section`
-  padding: 32px 48px;
-
-  ${up("sm")} {
-    padding: 24px 48px;
-  }
-`;
-
-const Title = styled.h1`
-  font-weight: bold;
-  font-size: 42px;
-  margin-bottom: 18px;
-  display: inline-block;
-  color: #666;
-
-  ::before {
-    content: attr(title);
-    background-clip: text;
-    color: transparent;
-    position: absolute;
-    margin-left: -1px;
-    margin-top: -1px;
-    background-image: linear-gradient(
-      45deg,
-      ${({ theme }) => theme.colors.purpleDark} 0%,
-      ${({ theme }) => theme.colors.purpleLight} 40%,
-      ${({ theme }) => theme.colors.blueLight} 100%
-    );
-  }
-`;
-
-const Content = styled.p`
-  font-size: 18px;
-  line-height: 24px;
-  color: #333;
-
-  ${up("md")} {
-    font-size: 21px;
-    line-height: 32px;
-  }
-
-  b {
-    font-weight: bold;
-  }
-`;
 
 const about: React.ReactElement = (
   <>
@@ -68,14 +25,12 @@ const about: React.ReactElement = (
   </>
 );
 
-export default function CardContent({}: CardContentProps) {
-  const title = "About";
+export default function ProfileContent({}: CardContentProps) {
   return (
-    <AboutSection>
-      <Title title={title}>{title}</Title>
-      <Content>{about}</Content>
-
+    <CardBody>
+      <CardTitle title="About" />
+      <TextContent>{about}</TextContent>
       <Link href={"/publications"}>Publications</Link>
-    </AboutSection>
+    </CardBody>
   );
 }
