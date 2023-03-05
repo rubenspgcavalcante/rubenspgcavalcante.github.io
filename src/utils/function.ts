@@ -1,19 +1,16 @@
-export type EmptyFunction<T extends Array<unknown> = []> = {(): () => void, thatReturns: {
-    "null": (...args: T) => null;
-    "string": (...args: T) => string;
-    "number": (...args: T) => number;
-    "boolean": (...args: T) => false;
-}};
+export type EmptyFunction = () => void;
 
-const emptyFunction: EmptyFunction = <EmptyFunction>function() {
-    return;
+export type EmptyFunctionThatReturns<T extends Array<unknown> = []> = {
+  null: (...args: T) => null;
+  string: (...args: T) => string;
+  number: (...args: T) => number;
+  boolean: (...args: T) => false;
 };
 
-emptyFunction.thatReturns = {
-    "null": (..._) => null,
-    "string": (..._) => '',
-    "number": (..._) => 0,
-    "boolean": (..._) => false,
-}
-
-export default emptyFunction;
+export const emptyFunction: EmptyFunction = () => null;
+export const emptyFunctionThatReturns = {
+  null: (..._) => null,
+  string: (..._) => "",
+  number: (..._) => 0,
+  boolean: (..._) => false,
+};

@@ -1,4 +1,4 @@
-import emptyFunction from "@/utils/function";
+import { emptyFunction } from "@/utils/function";
 import React, { createContext } from "react";
 
 export type ThemeTypes = "light" | "dark";
