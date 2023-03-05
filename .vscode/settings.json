@@ -3,5 +3,12 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "autoSnippet.snippets": [
+    {
+      "language": "typescriptreact",
+      "pattern": "**/*.tsx",
+      "snippet": "reactComponent"
+    }
+  ]
 }

@@ -15,6 +15,7 @@ export default function Header() {
         name="description"
         content="Senior Frontend Engineer, gamer, surfer and curious soul. Born on Fortaleza/Brazil, living in Berlin/Germany"
       />
+      <meta name="robots" content="index, follow" />
       <meta name="theme-color" content="#333" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://rubenspgcavalcante.github.io" />
@@ -22,7 +23,7 @@ export default function Header() {
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="627" />
-      <title>Rubens, Frontend Engineer</title>
+      <title>Rubens Pinheiro Gonçalves Cavalcante, Frontend Engineer</title>
     </Head>
   );
 }

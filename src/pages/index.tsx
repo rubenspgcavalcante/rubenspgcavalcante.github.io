@@ -1,14 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
-import styled from "@emotion/styled";
-import Header from "@/template/Header";
-import Body from "@/template/Body";
+import CardContent from "@/profile/CardContent";
+import CardHeader from "@/profile/CardHeader";
+import ProfilePhoto from "@/profile/ProfilePhoto";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <Body>Hello World!</Body>
+      <CardHeader>
+        <ProfilePhoto />
+      </CardHeader>
+      <CardContent />
     </>
   );
 }
