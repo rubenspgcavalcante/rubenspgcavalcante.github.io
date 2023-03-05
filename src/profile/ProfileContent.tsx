@@ -1,10 +1,7 @@
 import CardBody from "@/components/CardBody";
 import CardTitle from "@/components/CardTitle";
 import TextContent from "@/components/TextContent";
-import styled from "@emotion/styled";
-import Link from "next/link";
 import React from "react";
-import { up } from "styled-breakpoints";
 
 type CardContentProps = {};
 

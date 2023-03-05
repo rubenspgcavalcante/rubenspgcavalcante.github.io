@@ -1,5 +1,6 @@
+import ThemeSwitchContext from "@/themes/ThemeSwitchContext";
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useContext } from "react";
 import { up } from "styled-breakpoints";
 
 type CardHeaderProps = {
@@ -45,7 +46,7 @@ const Title = styled.h1`
 
 const Description = styled.h2`
   font-size: 24px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.base90};
   position: relative;
   font-weight: bold;
   margin-top: 32px;
@@ -59,8 +60,17 @@ const title = "Hi! I'm Rubens Cavalcante";
 const desc = "Senior Frontend Engineer - London, UK";
 
 export default function CardHeader({ children }: CardHeaderProps) {
+  const { current, setTheme } = useContext(ThemeSwitchContext);
+
   return (
     <Bg>
+      <button
+        onClick={() =>
+          current === "light" ? setTheme("dark") : setTheme("light")
+        }
+      >
+        Switch Theme
+      </button>
       <HeaderTextBlock>
         <Title>{title}</Title>
         <Description>{desc}</Description>
