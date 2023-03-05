@@ -6,10 +6,6 @@ type CardHeaderProps = {
   children: React.ReactElement | React.ReactElement[];
 };
 
-const purpleLight = "#b457f2";
-const purleDark = "#7000e0";
-const blueLight = "#58bedd";
-
 const Bg = styled.header`
   height: 180px;
   display: flex;
@@ -18,9 +14,9 @@ const Bg = styled.header`
   padding: 48px;
   background: linear-gradient(
     45deg,
-    ${purleDark} 0%,
-    ${purpleLight} 40%,
-    ${blueLight} 100%
+    ${({ theme }) => theme.colors.purpleDark} 0%,
+    ${({ theme }) => theme.colors.purpleLight} 40%,
+    ${({ theme }) => theme.colors.blueLight} 100%
   );
 
   ${up("md")} {
