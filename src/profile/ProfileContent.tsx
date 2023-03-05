@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { up } from "styled-breakpoints";
-import Link from "next/link";
+import CardBody from "@/components/CardBody";
 import CardTitle from "@/components/CardTitle";
 import TextContent from "@/components/TextContent";
-import CardBody from "@/components/CardBody";
+import styled from "@emotion/styled";
+import Link from "next/link";
+import React from "react";
+import { up } from "styled-breakpoints";
 
 type CardContentProps = {};
 
@@ -30,7 +30,6 @@ export default function ProfileContent({}: CardContentProps) {
     <CardBody>
       <CardTitle title="About" />
       <TextContent>{about}</TextContent>
-      <Link href={"/publications"}>Publications</Link>
     </CardBody>
   );
 }

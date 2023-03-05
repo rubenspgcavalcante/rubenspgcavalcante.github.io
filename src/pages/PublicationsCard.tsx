@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "@emotion/styled";
 import Card from "@/components/Card";
-import CardTitle from "@/components/CardTitle";
 import CardBody from "@/components/CardBody";
+import CardTitle from "@/components/CardTitle";
+import styled from "@emotion/styled";
+import React from "react";
 
 type PublicationsCardProps = {};
 

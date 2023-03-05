@@ -1,7 +1,7 @@
+import profilePic from "@/static/profile-pic.png";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import React from "react";
-import profilePic from "@/static/profile-pic.png";
 import { up } from "styled-breakpoints";
 
 type ProfilePhotoProps = {};

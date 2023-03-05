@@ -1,6 +1,6 @@
+import sitePreview from "@/static/site-preview.png";
 import Head from "next/head";
 import React from "react";
-import sitePreview from "@/static/site-preview.png";
 
 export default function Header() {
   return (
