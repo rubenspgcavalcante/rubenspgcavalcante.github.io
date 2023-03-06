@@ -7,7 +7,7 @@ type TextContentProps = { children: React.ReactElement };
 const Content = styled.p`
   font-size: 18px;
   line-height: 24px;
-  color: #333;
+  color: ${({ theme }) => theme.colors.base20};
 
   ${up("md")} {
     font-size: 21px;
