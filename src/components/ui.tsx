@@ -40,5 +40,5 @@ export function Tag({ children }: PropsWithChildren) {
 }
 
 export function Card({ className, ...props }: HTMLAttributes<HTMLElement>) {
-  return <article className={cn("overflow-hidden rounded-[20px] border border-border bg-surface shadow-[var(--shadow-card)]", className)} {...props} />;
+  return <article className={cn("overflow-hidden rounded-[20px] border border-border bg-surface shadow-(--shadow-card)", className)} {...props} />;
 }

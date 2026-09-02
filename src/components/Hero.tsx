@@ -3,15 +3,15 @@ import { Button, Container } from "./ui";
 export function Hero() {
   return (
     <section className="py-20 md:py-24" id="hero">
-      <Container className="grid items-center gap-9 md:grid-cols-[minmax(0,1.45fr)_minmax(280px,.55fr)] md:gap-[60px]">
+      <Container className="grid items-center gap-9 md:grid-cols-[minmax(0,1.45fr)_minmax(280px,.55fr)] md:gap-15">
         <div>
           <p className="mb-3.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent">
             Staff Software Engineer · London, UK
           </p>
-          <h1 className="max-w-[850px] text-[clamp(2.9rem,7vw,5.9rem)] font-extrabold leading-[0.98] tracking-[-0.06em]">
+          <h1 className="max-w-212.5 text-[clamp(2.9rem,7vw,5.9rem)] font-extrabold leading-[0.98] tracking-[-0.06em]">
             Engineering systems that scale - and teams that can evolve them.
           </h1>
-          <p className="mt-7 max-w-[760px] text-lg leading-relaxed text-muted">
+          <p className="mt-7 max-w-190 text-lg leading-relaxed text-muted">
             Staff Software Engineer with a long frontend background,
             specialising in React, TypeScript, platform architecture, developer
             experience, GraphQL, testing and technical leadership.
@@ -45,11 +45,11 @@ export function Hero() {
           </div>
         </div>
         <div className="rounded-[28px] bg-dark text-white shadow-[0_30px_80px_rgba(11,16,32,.24)]">
-          <div className="rounded-t-[28px] bg-gradient-to-br from-[#1a2440] to-[#0c1223] px-6 pt-6">
+          <div className="rounded-t-[28px] bg-linear-to-br from-[#1a2440] to-[#0c1223] px-6 pt-6">
             <img
               src="/assets/profile/me.webp"
               alt="Rubens Cavalcante"
-              className="mx-auto w-full max-w-[300px] rounded-t-[18px] saturate-90"
+              className="mx-auto w-full max-w-75 rounded-t-[18px] saturate-90"
             />
           </div>
           <div className="p-6">

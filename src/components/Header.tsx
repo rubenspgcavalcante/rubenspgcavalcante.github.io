@@ -10,7 +10,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-border/80 bg-background/90 backdrop-blur-xl">
-      <Container className="flex min-h-16 items-center justify-between gap-6 md:min-h-[72px]">
+      <Container className="flex min-h-16 items-center justify-between gap-6 md:min-h-18">
         <a href="#top" className="font-extrabold tracking-[-0.02em] no-underline">Rubens Cavalcante</a>
         <button
           type="button"

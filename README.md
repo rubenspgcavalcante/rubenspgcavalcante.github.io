@@ -15,4 +15,10 @@ npm run dev
 npm run build
 ```
 
-The app is componentized into sections and reusable UI primitives. Content is separated into `src/data/content.js`.
+## Lint
+
+```bash
+npm run lint
+```
+
+The app is componentized into sections and reusable UI primitives. Content is separated into `src/data/content.ts`.
