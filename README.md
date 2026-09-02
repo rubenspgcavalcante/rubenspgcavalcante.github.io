@@ -1,8 +1,18 @@
-# Personal Site
+# Rubens Cavalcante Portfolio
 
-This is my personal site, made with `react` and `redux`, plus
-some awesome web techniques and optmizations like lazy loading, progressive image loading,
-reactive programing and so on. Feel free to fork and make your own verion :smile:
+React portfolio refactor using Vite, Tailwind CSS, class-variance-authority, clsx and tailwind-merge.
 
-# License
-This project is under the MIT license
+## Run
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+The app is componentized into sections and reusable UI primitives. Content is separated into `src/data/content.js`.
