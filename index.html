@@ -21,6 +21,21 @@
     />
     <meta property="og:image" content="/assets/meta/site-preview.png" />
     <link rel="icon" type="image/x-icon" href="/assets/meta/favicon.ico" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = localStorage.getItem("theme");
+          const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+
+          if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.style.colorScheme = "dark";
+          }
+        } catch {
+          document.documentElement.style.colorScheme = "light";
+        }
+      })();
+    </script>
     <title>Rubens Cavalcante - Staff Software Engineer</title>
   </head>
   <body class="bg-background text-foreground antialiased">
