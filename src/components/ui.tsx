@@ -36,7 +36,7 @@ export const Button = forwardRef<HTMLAnchorElement, ButtonProps>(function Button
 Button.displayName = "Button";
 
 export function Tag({ children }: PropsWithChildren) {
-  return <span className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">{children}</span>;
+  return <span className="rounded-full bg-tag px-2.5 py-1 text-xs font-medium text-tag-text">{children}</span>;
 }
 
 export function Card({ className, ...props }: HTMLAttributes<HTMLElement>) {

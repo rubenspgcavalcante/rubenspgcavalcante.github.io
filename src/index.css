@@ -9,7 +9,26 @@
   --color-border: #dfe4ea;
   --color-accent: #2b5cff;
   --color-dark: #0b1020;
+  --color-band: #eef1f5;
+  --color-surface-hover: #f9fafb;
+  --color-tag: #f3f4f6;
+  --color-tag-text: #4b5563;
   --shadow-card: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+html.dark {
+  --color-background: #0f172a;
+  --color-surface: #182235;
+  --color-foreground: #f8fafc;
+  --color-muted: #a8b3c7;
+  --color-border: #334155;
+  --color-accent: #7da2ff;
+  --color-dark: #050816;
+  --color-band: #121c2e;
+  --color-surface-hover: #223049;
+  --color-tag: #223049;
+  --color-tag-text: #cbd5e1;
+  --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.26);
 }
 
 html { scroll-behavior: smooth; }

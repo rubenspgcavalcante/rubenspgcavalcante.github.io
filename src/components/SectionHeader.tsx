@@ -1,6 +1,18 @@
 import { SectionKicker } from "./ui";
 
-export function SectionHeader({ number, title, note, muted = false }) {
+interface SectionHeaderProps {
+  number: string;
+  title: string;
+  note?: string;
+  muted?: boolean;
+}
+
+export function SectionHeader({
+  number,
+  title,
+  note,
+  muted = false,
+}: SectionHeaderProps) {
   return (
     <div className="mb-9 flex flex-col items-start justify-between gap-3.5 md:flex-row md:items-end md:gap-10">
       <div>
